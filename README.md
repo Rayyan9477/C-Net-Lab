@@ -1,3 +1,3 @@
 # C-Net-Lab
 
-Lab task for linux
+Lab task for linuxsd
