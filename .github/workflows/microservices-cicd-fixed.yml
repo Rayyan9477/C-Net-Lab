@@ -17,19 +17,45 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: '20'
-        # Remove the cache option as we'll handle it per service
+    
+    # Auth Service Test
+    - name: Cache Auth Service npm dependencies
+      uses: actions/cache@v3
+      with:
+        path: microservices-app/auth-service/node_modules
+        key: ${{ runner.os }}-npm-auth-${{ hashFiles('microservices-app/auth-service/package-lock.json') }}
+        restore-keys: |
+          ${{ runner.os }}-npm-auth-
     
     - name: Test Auth Service
       working-directory: microservices-app/auth-service
       run: |
         npm ci
         npm test
-      
+    
+    # Todo Service Test  
+    - name: Cache Todo Service npm dependencies
+      uses: actions/cache@v3
+      with:
+        path: microservices-app/todo-service/node_modules
+        key: ${{ runner.os }}-npm-todo-${{ hashFiles('microservices-app/todo-service/package-lock.json') }}
+        restore-keys: |
+          ${{ runner.os }}-npm-todo-
+    
     - name: Test Todo Service
       working-directory: microservices-app/todo-service
       run: |
         npm ci
         npm test
+    
+    # Frontend Test
+    - name: Cache Frontend npm dependencies
+      uses: actions/cache@v3
+      with:
+        path: microservices-app/frontend/node_modules
+        key: ${{ runner.os }}-npm-frontend-${{ hashFiles('microservices-app/frontend/package-lock.json') }}
+        restore-keys: |
+          ${{ runner.os }}-npm-frontend-
     
     - name: Test Frontend
       working-directory: microservices-app/frontend
