@@ -4,8 +4,8 @@ db = db.getSiblingDB('admin');
 // Create admin user if it doesn't exist
 if (db.getUser("admin") == null) {
   db.createUser({
-    user: "admin",
-    pwd: "admin_password",
+    user: "rayyan9477",
+    pwd: "Nobility@2025",
     roles: [{ role: "userAdminAnyDatabase", db: "admin" }]
   });
 }
@@ -13,16 +13,16 @@ if (db.getUser("admin") == null) {
 // Auth service database
 db = db.getSiblingDB('auth-service');
 db.createUser({
-  user: "auth_user",
-  pwd: "auth_password",
+  user: "rayyan9477",
+  pwd: "Nobility@2025",
   roles: [{ role: "readWrite", db: "auth-service" }]
 });
 
 // Todo service database
 db = db.getSiblingDB('todo-service');
 db.createUser({
-  user: "todo_user",
-  pwd: "todo_password",
+  user: "rayyan9477",
+  pwd: "Nobility@2025",
   roles: [{ role: "readWrite", db: "todo-service" }]
 });
 

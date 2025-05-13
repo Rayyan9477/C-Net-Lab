@@ -51,8 +51,8 @@ services:
     networks:
       - backend-network
     environment:
-      - MONGO_INITDB_ROOT_USERNAME=root
-      - MONGO_INITDB_ROOT_PASSWORD=example
+      - MONGO_INITDB_ROOT_USERNAME=rayyan9477
+      - MONGO_INITDB_ROOT_PASSWORD=Nobility@2025
 
   # Authentication Service
   auth-service:
@@ -62,7 +62,7 @@ services:
       - mongo
     environment:
       - PORT=3001
-      - MONGODB_URI=mongodb://auth_user:auth_password@mongo:27017/auth-service
+      - MONGODB_URI=mongodb://rayyan9477:Nobility%402025@mongo:27017/auth-service
       - JWT_SECRET=your_production_jwt_secret_key
       - TOKEN_EXPIRY=1d
     networks:
@@ -82,7 +82,7 @@ services:
       - auth-service
     environment:
       - PORT=3002
-      - MONGODB_URI=mongodb://todo_user:todo_password@mongo:27017/todo-service
+      - MONGODB_URI=mongodb://rayyan9477:Nobility%402025@mongo:27017/todo-service
       - AUTH_SERVICE_URL=http://auth-service:3001
     networks:
       - backend-network

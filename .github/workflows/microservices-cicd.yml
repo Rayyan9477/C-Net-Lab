@@ -60,6 +60,8 @@ jobs:
         context: ./microservices-app/auth-service
         push: true
         tags: ${{ secrets.DOCKER_HUB_USERNAME }}/microservices-auth:latest
+        build-args: |
+          MONGODB_URI=mongodb://${{ secrets.MONGODB_USERNAME }}:${{ secrets.MONGODB_PASSWORD }}@mongo:27017/auth-service
     
     - name: Build and push Todo Service
       uses: docker/build-push-action@v4
@@ -67,6 +69,9 @@ jobs:
         context: ./microservices-app/todo-service
         push: true
         tags: ${{ secrets.DOCKER_HUB_USERNAME }}/microservices-todo:latest
+        build-args: |
+          MONGODB_URI=mongodb://${{ secrets.MONGODB_USERNAME }}:${{ secrets.MONGODB_PASSWORD }}@mongo:27017/todo-service
+          AUTH_SERVICE_URL=http://auth-service:3001
     
     - name: Build and push Frontend
       uses: docker/build-push-action@v4
