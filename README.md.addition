@@ -1,0 +1,58 @@
+### Repository Structure
+
+```
+microservices-app/
+├── auth-service/         # Authentication microservice
+├── todo-service/         # Todo management microservice
+├── frontend/             # React frontend application
+├── nginx/                # Nginx reverse proxy configuration
+├── mongo-init/           # MongoDB initialization scripts
+├── screenshots/          # Application screenshots
+├── docker-compose.yml    # Docker Compose configuration
+├── run.sh                # Application run script
+└── test-api.sh           # API testing script
+```
+
+### Running the Application
+
+1. Clone this repository:
+   ```bash
+   git clone <repository-url>
+   cd C-Net-Lab
+   ```
+
+2. Run the application using the provided script:
+   ```bash
+   cd microservices-app
+   ./run.sh
+   ```
+
+3. Access the application at http://localhost:8080
+
+### Testing the Application
+
+1. Use the provided test script to verify API functionality:
+   ```bash
+   ./test-api.sh
+   ```
+
+2. Follow the steps in the screenshots/README.md file to capture the required screenshots.
+
+### Submission Materials
+
+- **GitHub Repository**: [Link to this repository]
+- **Docker Hub Images**:
+  - Auth Service: [Your Docker Hub Username]/microservices-auth:latest
+  - Todo Service: [Your Docker Hub Username]/microservices-todo:latest
+  - Frontend: [Your Docker Hub Username]/microservices-frontend:latest
+  - Nginx: [Your Docker Hub Username]/microservices-nginx:latest
+- **Configuration Files**:
+  - docker-compose.yml: Defines all services and their relationships
+  - nginx/nginx.conf: Configures the reverse proxy
+  - .env files: Contains environment-specific configuration
+
+### Documentation
+
+Detailed documentation for each component can be found in the microservices-app directory.
+
+Submission Date: May 13, 2025
